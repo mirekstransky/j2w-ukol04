@@ -3,23 +3,31 @@
 <html lang="cs">
 <head>
     [#include "_common/head.ftlh"]
+    <style>
+        body{
+            background: white url(/images/mafia-background.jpg) center center/cover no-repeat;
+        }
+    </style>
 </head>
+
 <body>
+[#assign x="Unknown"]
 <div class="seznam">
     [#list seznam as vizitka]
     <a href="/detail/${vizitka?index}">
         <div class="vizitka">
-            <div class="jmeno">Dita (Přikrylová) Formánková</div>
-            <div class="firma">Czechitas z. s.</div>
+            <img class="foto" src="images/${vizitka.foto}"alt="${vizitka.name!x}!"/>
+            <div class="jmeno">${vizitka.jmeno!x}</div>
+            <div class="firma">${vizitka.firma!x}</div>
             <div class="udaje">
                 <div class="adresa">
-                    <div>Václavské náměstí 837/11</div>
-                    <div><span>11000</span> Praha 1</div>
+                    <div>${vizitka.ulice!x}</div>
+                    <div>${vizitka.obecPsc!x}</div>
                 </div>
                 <div class="kontakty">
-                    <div><i class="bi bi-at"></i> dita@example.com</div>
-                    <div><i class="bi bi-phone"></i> +420 800123456</div>
-                    <div><i class="bi bi-globe"></i> www.czechitas.cz</div>
+                    <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
+                    <div><i class="bi bi-phone"></i>${vizitka.telefon!x}</div>
+                    <div><i class="bi bi-globe"></i>${vizitka.web!x}</div>
                 </div>
             </div>
         </div>
@@ -29,8 +37,8 @@
     <a href="/nova">
         <div class="vizitka vizitka--nova">
             <svg width="100" height="100">
-                <rect width="20" height="100" x="40" y="0" fill="white" />
-                <rect width="100" height="20" x="0" y="40" fill="white" />
+                <rect width="20" height="100" x="40" y="0" fill="rgb(136, 8, 8)" />
+                <rect width="100" height="20" x="0" y="40" fill="rgb(136, 8, 8)" />
             </svg>
         </div>
     </a>
