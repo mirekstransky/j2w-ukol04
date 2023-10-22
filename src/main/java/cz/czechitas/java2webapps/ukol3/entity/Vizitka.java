@@ -13,11 +13,12 @@ public class Vizitka {
   private String email;
   private String telefon;
   private String web;
+  private String foto;
 
   public Vizitka() {
   }
 
-  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web) {
+  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web, String foto) {
     this.jmeno = Objects.requireNonNull(jmeno);
     this.firma = Objects.requireNonNull(firma);
     this.ulice = Objects.requireNonNull(ulice);
@@ -25,6 +26,15 @@ public class Vizitka {
     this.email = email;
     this.telefon = telefon;
     this.web = web;
+    this.foto = foto;
+  }
+
+  public String getFoto() {
+    return foto;
+  }
+
+  public void setFoto(String foto) {
+    this.foto = foto;
   }
 
   public String getJmeno() {

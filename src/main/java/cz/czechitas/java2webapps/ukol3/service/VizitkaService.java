@@ -11,72 +11,77 @@ public class VizitkaService {
   private final List<Vizitka> seznamVizitek = new ArrayList<>();
 
   public VizitkaService() {
+
+    seznamVizitek.add(
+              new Vizitka(
+                      "Ennio Salieri",
+                      "Salieri´s mafia",
+                      "Little Italy",
+                      "Chicago",
+                      "boss@salieri.com",
+                      null,
+                      "www.boss.salieri.com",
+                      "image-salieri.jpg")
+    );
+      seznamVizitek.add(
+              new Vizitka(
+                      "Frank Colletti",
+                      "Salieri´s mafia",
+                      "Little Italy",
+                      "Chicago",
+                      "frank@salieri.com",
+                      null,
+                      "www.frank.salieri.com",
+                      "image-frank.jpg")
+      );
+    seznamVizitek.add(
+              new Vizitka(
+                      "Vincenzo Ricci",
+                      "Salieri´s mafia",
+                      "Little Italy",
+                      "Chicago",
+                      null,
+                      null,
+                      "www.vincenzo.salieri.com",
+                      "image-vincenzo.jpg")
+    );
+      seznamVizitek.add(
+
+              new Vizitka(
+                      "Thomas Angelo",
+                      "Salieri´s mafia",
+                      "Little Italy",
+                      "Chicago",
+                      "tommy@salieri.com",
+                      "+800123456",
+                      "www.tommy.salieri.com",
+                      "image-tommy.jpg")
+      );
     seznamVizitek.add(
             new Vizitka(
-                    "Dita (Přikrylová) Formánková",
-                    "Czechitas z. s.",
-                    "Václavské náměstí 837/11",
-                    "11000 Praha 1",
-                    "dita@czechitas.cs",
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
+                    "Paulie Lombardo",
+                    "Salieri´s mafia",
+                    "Little Italy",
+                    "Chicago",
+                    "paulie@salieri.com",
+                    "+800123456",
+                    "www.paulie.salieri.com",
+                    "image-paulie.jpg")
     );
     seznamVizitek.add(
             new Vizitka(
-                    "Barbora Bühnová",
-                    "Czechitas z. s.",
-                    "Škrobárenská 511/3",
-                    "61700 Brno",
-                    null,
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
+                    "Sam Trapani",
+                    "Salieri´s mafia",
+                    "Little Italy",
+                    "Chicago",
+                    "sam@salieri.com",
+                    "+800123456",
+                    "www.sam.salieri.com",
+                    "image-sam.jpg")
     );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Monika Ptáčníková",
-                    "Czechitas z. s.",
-                    "Technologická 372/2",
-                    "70800 Ostrava-Pustkovec",
-                    "monika@czechitas.cs",
-                    "+420 800123456",
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Mirka Zatloukalová",
-                    "Czechitas z. s.",
-                    "Vavrečkova 5262",
-                    "76001 Zlín",
-                    "mirka@czechitas.cs",
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Ondřej Čejka",
-                    "Czechitas z. s.",
-                    "Jungmannova 3",
-                    "77900 Olomouc",
-                    null,
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
-    seznamVizitek.add(
-            new Vizitka(
-                    "Kateřina Reiglová",
-                    "Czechitas z. s.",
-                    "Lipová 1789/9",
-                    "37005 České Budějovice",
-                    null,
-                    null,
-                    "www.czechitas.cz"
-            )
-    );
+
+
+
   }
 
   public List<Vizitka> getAll() {
@@ -85,5 +90,12 @@ public class VizitkaService {
 
   public Vizitka getById(int id) {
     return seznamVizitek.get(id);
+  }
+
+  public void deleteById(int id) {
+    seznamVizitek.remove(id);
+  }
+  public void append(Vizitka vizitka ) {
+    seznamVizitek.add(vizitka);
   }
 }
