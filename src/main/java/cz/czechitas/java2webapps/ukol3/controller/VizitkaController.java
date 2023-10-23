@@ -13,9 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-/**
- * Kontroler obsluhující zobrazování vizitek.
- */
 @Controller
 public class VizitkaController {
   private final VizitkaService service;

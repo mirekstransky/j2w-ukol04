@@ -32,7 +32,7 @@ public class Vizitka {
   }
 
   public String getStatus() {
-    return status;
+     return status;
   }
 
   public void setStatus(String status) {

@@ -26,5 +26,4 @@ public class Omerta {
   public String getFoto() {
     return foto;
   }
-
 };
