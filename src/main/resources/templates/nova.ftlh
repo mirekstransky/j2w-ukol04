@@ -15,13 +15,16 @@
 <form action="/nova" method="post" class="detail">
 
     <div class="vizitka vizitka-detail">
+
+        <input class="status status-input" type="text" placeholder="Enter Status" name="status">
+
         <div class="first-container">
             <div class="container-foto">
                 <div>
                     <img class="foto-nova" src="images/unknown.jpg" />
                 </div>
                 <div>
-                    <input name="foto" type="file">
+                    <input name="foto" type="file" value="images/unknows.jpg">
                 </div>
             </div>
             <div class="container-jmeno" >
@@ -31,12 +34,12 @@
 
         <input name="firma" class="firma input"placeholder="Enter Company"></input>
         <div class="udaje">
-            <div class="adresa">
+            <div class="adresa-in">
                 <div>
-                    <input name="adresa" class="adresa input" placeholder="Street"></input>
+                    <input name="ulice" class="adresa-in input" placeholder="Street"></input>
                 </div>
                 <div>
-                    <input name="obecPSC" class="adresa input" placeholder="Post Code Town"></input>
+                    <input name="obecPsc" class="adresa-in input" placeholder="Post Code Town"></input>
                 </div>
             </div>
             <div class="kontakty">
@@ -46,17 +49,12 @@
             </div>
         </div>
     </div>
-    <button type="submit" class="btn">Ulož</button>
-
-    <nav class="btn-nav">
-        <button type="button" class="btn"><a href="/">◂ Back to main page</a></button>
-        <button type="button" class="btn">Save</button>
-    </nav>
-
+        <button type="submit" class="back-main">Save</button>
+        <button type="button" class="back-main"><a href="/">◂ Back to main page</a></button>
 </form>
 
 <div class="offer">
-    Nabídka která se neodmítá
+    An offer that cannot be refused.
 </div>
 
 </body>
