@@ -17,16 +17,16 @@
         <div class="vizitka">
             <img class="foto" src="images/${vizitka.foto}"alt="${vizitka.name!x}!"/>
             <div class="status-seznam">${vizitka.status}</div>
-            <div class="jmeno">${vizitka.jmeno!x}</div>
-            <div class="firma">${vizitka.firma!x}</div>
+            <div class="jmeno">${vizitka.name!x}</div>
+            <div class="firma">${vizitka.company!x}</div>
             <div class="udaje">
                 <div class="adresa">
-                    <div>${vizitka.ulice!x}</div>
-                    <div>${vizitka.obecPsc!x}</div>
+                    <div>${vizitka.street!x}</div>
+                    <div>${vizitka.streetPostCode!x}</div>
                 </div>
                 <div class="kontakty">
                     <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
-                    <div><i class="bi bi-phone"></i>${vizitka.telefon!x}</div>
+                    <div><i class="bi bi-phone"></i>${vizitka.phoneNumber!x}</div>
                     <div><i class="bi bi-globe"></i>${vizitka.web!x}</div>
                 </div>
             </div>

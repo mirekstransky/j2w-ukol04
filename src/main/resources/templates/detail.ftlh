@@ -26,16 +26,16 @@
             </form>
         </div>
         <div class="status">${vizitka.status}</div>
-        <div class="jmeno">${vizitka.jmeno!x}</div>
-        <div class="firma">${vizitka.firma!x}</div>
+        <div class="jmeno">${vizitka.name!x}</div>
+        <div class="firma">${vizitka.company!x}</div>
         <div class="udaje">
             <div class="adresa">
-                <div>${vizitka.ulice!x}</div>
+                <div>${vizitka.street!x}</div>
                 <div><span>${vizitka.celaAdresa!x}</span></div>
             </div>
             <div class="kontakty">
                 <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
-                <div><i class="bi bi-phone"></i>${vizitka.telefon!x}</div>
+                <div><i class="bi bi-phone"></i>${vizitka.phoneNumber!x}</div>
                 <div><i class="bi bi-globe"></i>${vizitka.web!x}</div>
             </div>
         </div>

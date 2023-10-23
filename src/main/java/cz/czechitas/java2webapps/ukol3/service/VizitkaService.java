@@ -102,7 +102,7 @@ public class VizitkaService {
 
     omerta.add(
             new Omerta(
-                    seznamVizitek.get(id).getJmeno(),
+                    seznamVizitek.get(id).getName(),
                     seznamVizitek.get(id).getStatus(),
                     seznamVizitek.get(id).getFoto(), date.toString()));
 
@@ -110,7 +110,7 @@ public class VizitkaService {
 
   }
   public void append(Vizitka vizitka) {
-    if (!vizitka.getJmeno().isEmpty()) {
+    if (!vizitka.getName().isEmpty()) {
       seznamVizitek.add(vizitka);
       vizitka.setFoto("unknown.jpg");
     }

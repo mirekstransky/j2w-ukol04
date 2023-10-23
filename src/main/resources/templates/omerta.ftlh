@@ -16,11 +16,11 @@
     <div class="container-omerta">
         <div class="container-omerta">
             <img class="omerta-foto" src="/images/${omerta.foto}" alt="Omerta fotografie">
-            <div>${omerta.jmeno}</div>
+            <div>${omerta.name}</div>
             <div>${omerta.status}</div>
         </div>
 
-        <div class="omerta-datum">Date of Omerta: ${omerta.datum}</div>
+        <div class="omerta-datum">Date of Omerta: ${omerta.dateOmerta}</div>
 
     </div>
     [/#list]
