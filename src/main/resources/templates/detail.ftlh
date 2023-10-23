@@ -4,7 +4,7 @@
 <head>
     [#include "_common/head.ftlh"]
     <style>
-        body{
+        body {
             background: white url(${picture}) center center/cover no-repeat;
         }
     </style>
@@ -15,33 +15,59 @@
 <body>
 [#assign x="Unknown"]
 <div class="detail">
-        <div class="vizitka">
-            <img class="foto" src="/images/${vizitka.foto}" alt="Vizitková fotografie">
-            <div class="jmeno">${vizitka.jmeno!x}</div>
-            <div class="firma">${vizitka.firma!x}</div>
-            <div class="udaje">
-                <div class="adresa">
-                    <div>${vizitka.ulice!x}</div>
-                    <div><span>${vizitka.celaAdresa!x}</span></div>
-                </div>
-                <div class="kontakty">
-                    <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
-                    <div><i class="bi bi-phone"></i>${vizitka.telefon!x}</div>
-                    <div><i class="bi bi-globe"></i>${vizitka.web!x}</div>
-                </div>
+    <div class="vizitka">
+        <img class="foto" src="/images/${vizitka.foto}" alt="Vizitková fotografie">
+        <div class="delete">
+            <form method="post" action="/delete" class="d-inline">
+                <input type="hidden" name="id" value=${vizitkaID} />
+                <button class="omerta-button" type="submit">
+                    <img class="omerta" src="/images/omerta.jpg" role="img" aria-label="Delete"/>
+                </button>
+            </form>
+        </div>
+        <div class="status">${vizitka.status}</div>
+        <div class="jmeno">${vizitka.jmeno!x}</div>
+        <div class="firma">${vizitka.firma!x}</div>
+        <div class="udaje">
+            <div class="adresa">
+                <div>${vizitka.ulice!x}</div>
+                <div><span>${vizitka.celaAdresa!x}</span></div>
+            </div>
+            <div class="kontakty">
+                <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
+                <div><i class="bi bi-phone"></i>${vizitka.telefon!x}</div>
+                <div><i class="bi bi-globe"></i>${vizitka.web!x}</div>
             </div>
         </div>
-
-    <div class="mapa">
-        <iframe style="border:none" src="https://frame.mapy.cz/?q=${"${vizitka.celaAdresa}"?url}" width="100%" height="100%" frameborder="0"></iframe>
     </div>
-    <nav>
-        <form method="post" action="/delete/${vizitkaID}" class="d-inline">
-            <input type="button" name="id" value="${vizitkaID}" />
-            <button type="submit" class="btn">Delete</button>
-        </form>
-        <a href="/">◂ Zpět na seznam</a>
-    </nav>
+
+[#--    [#if vizitka.celaAdresa??]--]
+[#--        <div class="mapa">--]
+[#--            <iframe style="border:none"  width="100%"--]
+[#--                    height="100%" frameborder="0"></iframe>--]
+[#--        </div>--]
+[#--    [#else]--]
+[#--        <div class="mapa">--]
+[#--            <iframe style="border:none" src="images/lost-heaven.jpg" width="100%"--]
+[#--                    height="100%" frameborder="0"></iframe>--]
+[#--        </div>--]
+[#--    [/#if]--]
+
+    [#if vizitka.getCelaAdresa()??]
+        <div class="mapa">
+            <iframe style="border:none" src="https://frame.mapy.cz/?q=${vizitka.celaAdresa?url}" width="100%" height="100%" frameborder="0"></iframe>
+        </div>
+    [#else]
+        <div class="mapa-error">
+            <img src="/images/lost-heaven.jpg"></img>
+            <div class="status">Gangster position not found.</div>
+        </div>
+    [/#if]
+
+
+    <div class="back-main">
+        <a href="/">◂ Back to main page</a>
+    </div>
 </div>
 </body>
 </html>
