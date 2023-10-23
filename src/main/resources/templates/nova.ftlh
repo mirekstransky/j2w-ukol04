@@ -28,23 +28,23 @@
                 </div>
             </div>
             <div class="container-jmeno" >
-                <input name="jmeno" class="jmeno input" placeholder="Enter Name"></input>
+                <input name="name" class="jmeno input" placeholder="Enter Name"></input>
             </div>
         </div>
 
-        <input name="firma" class="firma input"placeholder="Enter Company"></input>
+        <input name="company" class="firma input"placeholder="Enter Company"></input>
         <div class="udaje">
             <div class="adresa-in">
                 <div>
-                    <input name="ulice" class="adresa-in input" placeholder="Street"></input>
+                    <input name="street" class="adresa-in input" placeholder="Street"></input>
                 </div>
                 <div>
-                    <input name="obecPsc" class="adresa-in input" placeholder="Post Code Town"></input>
+                    <input name="streetPostCode" class="adresa-in input" placeholder="Post Code Town"></input>
                 </div>
             </div>
             <div class="kontakty">
                 <input name="email" placeholder="Enter email" class="input"></input>
-                <input name="telefon" placeholder="Enter phone" class="input"></input>
+                <input name="phoneNumber" placeholder="Enter phone" class="input"></input>
                 <input name="web" placeholder="Enter web" class="input"></input>
             </div>
         </div>

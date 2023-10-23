@@ -11,12 +11,13 @@
 </head>
 <body>
 [#assign x="Unknown"]
+
 <div class="seznam">
     [#list seznam as vizitka]
     <a href="/detail/${vizitka?index}">
         <div class="vizitka">
             <img class="foto" src="images/${vizitka.foto}"alt="${vizitka.name!x}!"/>
-            <div class="status-seznam">${vizitka.status}</div>
+            <div class="status-seznam">${vizitka.status!x}</div>
             <div class="jmeno">${vizitka.name!x}</div>
             <div class="firma">${vizitka.company!x}</div>
             <div class="udaje">

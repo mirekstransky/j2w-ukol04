@@ -25,13 +25,13 @@
                 </button>
             </form>
         </div>
-        <div class="status">${vizitka.status}</div>
+        <div class="status">${vizitka.status!x}</div>
         <div class="jmeno">${vizitka.name!x}</div>
         <div class="firma">${vizitka.company!x}</div>
         <div class="udaje">
             <div class="adresa">
                 <div>${vizitka.street!x}</div>
-                <div><span>${vizitka.celaAdresa!x}</span></div>
+                <div><span>${vizitka.streetPostCode!x}</span></div>
             </div>
             <div class="kontakty">
                 <div><i class="bi bi-at"></i>${vizitka.email!x}</div>
@@ -40,18 +40,6 @@
             </div>
         </div>
     </div>
-
-[#--    [#if vizitka.celaAdresa??]--]
-[#--        <div class="mapa">--]
-[#--            <iframe style="border:none"  width="100%"--]
-[#--                    height="100%" frameborder="0"></iframe>--]
-[#--        </div>--]
-[#--    [#else]--]
-[#--        <div class="mapa">--]
-[#--            <iframe style="border:none" src="images/lost-heaven.jpg" width="100%"--]
-[#--                    height="100%" frameborder="0"></iframe>--]
-[#--        </div>--]
-[#--    [/#if]--]
 
     [#if vizitka.getCelaAdresa()??]
         <div class="mapa">
@@ -63,8 +51,6 @@
             <div class="status">Gangster position not found.</div>
         </div>
     [/#if]
-
-
     <div class="back-main">
         <a href="/">◂ Back to main page</a>
     </div>
