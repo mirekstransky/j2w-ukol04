@@ -33,6 +33,12 @@ public class VizitkaController {
     return result;
   }
 
+  @GetMapping("/omerta")
+  public ModelAndView omerta() {
+    ModelAndView result = new ModelAndView("omerta");
+    result.addObject("seznam", service.getAllOmerta());
+    return result;
+  }
   @GetMapping("/nova")
   public ModelAndView nova() {
     ModelAndView result = new ModelAndView("nova");
@@ -50,10 +56,10 @@ public class VizitkaController {
     result.addObject("picture", String.format("/images/image-%d.jpg", randomNumber));
     return result;
   }
-  @PostMapping("/delete/{id}")
-  public String delete(@PathVariable int id) {
+  @PostMapping("/delete")
+  public String delete(int id) {
     service.deleteById(id);
-    return "redirect:/";
+    return "redirect:/omerta";
   }
   @PostMapping("/nova")
   public String addPeople(Vizitka vizitka) {
