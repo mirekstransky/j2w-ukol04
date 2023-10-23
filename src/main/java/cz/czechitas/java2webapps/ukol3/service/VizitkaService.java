@@ -1,13 +1,17 @@
 package cz.czechitas.java2webapps.ukol3.service;
 
 import cz.czechitas.java2webapps.ukol3.entity.Vizitka;
+import cz.czechitas.java2webapps.ukol3.entity.Omerta;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.Date;
 
 @Service
 public class VizitkaService {
+
+  private final List<Omerta> omerta = new ArrayList<>();
   private final List<Vizitka> seznamVizitek = new ArrayList<>();
 
   public VizitkaService() {
@@ -17,11 +21,11 @@ public class VizitkaService {
                       "Ennio Salieri",
                       "Salieri´s mafia",
                       "Little Italy",
-                      "Chicago",
+                      null,
                       "boss@salieri.com",
                       null,
                       "www.boss.salieri.com",
-                      "image-salieri.jpg")
+                      "Padrino", "image-salieri.jpg")
     );
       seznamVizitek.add(
               new Vizitka(
@@ -32,7 +36,7 @@ public class VizitkaService {
                       "frank@salieri.com",
                       null,
                       "www.frank.salieri.com",
-                      "image-frank.jpg")
+                      "Consigliere", "image-frank.jpg")
       );
     seznamVizitek.add(
               new Vizitka(
@@ -43,7 +47,7 @@ public class VizitkaService {
                       null,
                       null,
                       "www.vincenzo.salieri.com",
-                      "image-vincenzo.jpg")
+                      "Esperto di armi", "image-vincenzo.jpg")
     );
       seznamVizitek.add(
 
@@ -55,7 +59,7 @@ public class VizitkaService {
                       "tommy@salieri.com",
                       "+800123456",
                       "www.tommy.salieri.com",
-                      "image-tommy.jpg")
+                      "Soldato", "image-tommy.jpg")
       );
     seznamVizitek.add(
             new Vizitka(
@@ -66,7 +70,7 @@ public class VizitkaService {
                     "paulie@salieri.com",
                     "+800123456",
                     "www.paulie.salieri.com",
-                    "image-paulie.jpg")
+                    "Soldato", "image-paulie.jpg")
     );
     seznamVizitek.add(
             new Vizitka(
@@ -77,25 +81,38 @@ public class VizitkaService {
                     "sam@salieri.com",
                     "+800123456",
                     "www.sam.salieri.com",
-                    "image-sam.jpg")
+                    "Caporegime", "image-sam.jpg")
     );
-
-
-
   }
 
   public List<Vizitka> getAll() {
     return seznamVizitek;
   }
+  public List<Omerta> getAllOmerta() {
+    return omerta;
+  }
 
   public Vizitka getById(int id) {
     return seznamVizitek.get(id);
   }
-
   public void deleteById(int id) {
+
+    long currentTime = System.currentTimeMillis();
+    Date date = new Date(currentTime);
+
+    omerta.add(
+            new Omerta(
+                    seznamVizitek.get(id).getJmeno(),
+                    seznamVizitek.get(id).getStatus(),
+                    seznamVizitek.get(id).getFoto(), date.toString()));
+
     seznamVizitek.remove(id);
+
   }
-  public void append(Vizitka vizitka ) {
-    seznamVizitek.add(vizitka);
+  public void append(Vizitka vizitka) {
+    if (!vizitka.getJmeno().isEmpty()) {
+      seznamVizitek.add(vizitka);
+      vizitka.setFoto("unknown.jpg");
+    }
   }
 }
