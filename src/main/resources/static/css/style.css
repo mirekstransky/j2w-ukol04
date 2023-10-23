@@ -45,6 +45,9 @@ a {
     transition: box-shadow 0.2s, transform 0.2s;
     border-radius: 15px;
     position: relative;
+    background-color: oldlace;
+
+
 }
 
 .vizitka--nova {
@@ -58,6 +61,25 @@ a:hover .vizitka {
     box-shadow: 10px 10px 10px black;
     transform: translate(-5px, -5px);
     transition: box-shadow 0.2s, transform 0.2s;
+
+}
+.status-seznam{
+    display: none;
+}
+
+a:hover .status-seznam {
+    position: absolute;
+    display: inline-block;
+    border: 5px dot-dash darkred;
+    top: -10px;
+    right: -20px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #8d4f4f;
+    border-radius: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color:black;
 }
 
 .jmeno {
@@ -105,13 +127,22 @@ a:hover .vizitka {
     text-decoration: underline;
 }
 
-.mapa {
-    height: 18em;
-    width: 40em;
-    border: 1px solid gray;
-    margin: 1em;
+.mapa{
+    display: flex;
+    border:2px solid black;
     box-shadow: 5px 5px 10px black;
+    color: darkred;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 32em;
 }
+.mapa iframe{
+    max-width: 100%;
+    height: 15em;
+    border-radius: 10px;
+}
+
 /*******************************/
 .foto{
     position: absolute;
@@ -133,7 +164,12 @@ a:hover .vizitka {
 }
 .adresa {
     display: inline-block;
-    width: 50%;
+    width: 40%;
+}
+
+.adresa-in{
+        display: inline-block;
+        width: 70%;
 }
 .email {
     display: inline;
@@ -176,19 +212,107 @@ button a {
     color: darkred;
     font-weight: bolder;
 }
-/*.status {*/
-/*    position: absolute;*/
+.status {
+    position: absolute;
+    display: inline-block;
+    border: 5px dot-dash darkred;
+    top: -10px;
+    right: -20px;
+    border: 2px solid black;
+    padding: 10px;
+    background-color: #8d4f4f;
+    border-radius: 10px;
+    font-weight: bolder;
+    text-transform: uppercase;
+    color:black;
+}
+.delete{
+    position: absolute;
+    display: inline-block;
+    border: 5px dot-dash darkred;
+    top: -10px;
+    left: -20px;
 
-/*    display: inline-block;*/
-/*    border: 5px dot-dash darkred;*/
-/*    top: -10px;*/
-/*    right: -20px;*/
-/*}*/
-/*.ikona {*/
-/*    display: inline-block;*/
-/*    width: 100px;*/
-/*    background-color: white;*/
-/*    padding: 10px;*/
-/*    border-radius: 50%;*/
+}
+.back-main{
+    display: inline-block;
+    padding: 10px;
+    border: 2px solid black;
+    border-radius: 10px;
+    background-color: white;
+    margin-bottom: 10px;
+    cursor: pointer;
+}
+.back-main:hover{
+    background-color: darkred;
+    color: white;
+}
+.back-main a:hover{
+    background-color: darkred;
+    color: white;
+}
+.back-main a {
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+}
+.btn-secondary {
+    --bs-btn-bg: white;
+}
+.status-input{
+    text-align: center;
+    background-color: white;
+}
+.omerta{
+    border: 2px solid darkred;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.omerta-button{
+    border: none;
+    cursor: pointer;
+    appearance: none;
+    background-color: inherit;
+    transition: transform .7s ease-in-out;
+    margin-left:10px;
+    position: absolute;
+    left: -10px;
+}
+.container-omerta{
+    display: flex;
+    font-family: 'PT Serif', serif;
+    font-size: 40px;
+    margin: 20px;
 
-/*}*/
+    gap: 20px;
+    background-color: darkred;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.omerta-foto{
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+}
+.omerta-datum{
+    margin-right: 40px;
+}
+.mapa-error{
+    display: flex;
+    position: relative;
+    border:2px solid black;
+    box-shadow:none;
+    color: darkred;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    width: 32em;
+}
+.mapa-error img{
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
