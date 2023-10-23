@@ -13,20 +13,30 @@ public class Vizitka {
   private String email;
   private String telefon;
   private String web;
+  private String status;
   private String foto;
 
   public Vizitka() {
   }
 
-  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web, String foto) {
-    this.jmeno = Objects.requireNonNull(jmeno);
-    this.firma = Objects.requireNonNull(firma);
-    this.ulice = Objects.requireNonNull(ulice);
-    this.obecPsc = Objects.requireNonNull(obecPsc);
+  public Vizitka(String jmeno, String firma, String ulice, String obecPsc, String email, String telefon, String web, String status, String foto) {
+    this.jmeno = jmeno;
+    this.firma = firma;
+    this.ulice = ulice;
+    this.obecPsc = obecPsc;
     this.email = email;
     this.telefon = telefon;
     this.web = web;
+    this.status = status;
     this.foto = foto;
+  }
+
+  public String getStatus() {
+    return status;
+  }
+
+  public void setStatus(String status) {
+    this.status = status;
   }
 
   public String getFoto() {
@@ -94,6 +104,11 @@ public class Vizitka {
   }
 
   public String getCelaAdresa() {
-    return ulice + ", " + obecPsc;
+    if (ulice == null || obecPsc == null) {
+      return null;
+    } else {
+      return ulice + ", " + obecPsc;
+    }
+//    return ulice + ", " + obecPsc;
   }
 }
