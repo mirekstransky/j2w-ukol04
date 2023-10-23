@@ -9,7 +9,6 @@
         }
     </style>
 </head>
-
 <body>
 [#assign x="Unknown"]
 <div class="seznam">
@@ -17,6 +16,7 @@
     <a href="/detail/${vizitka?index}">
         <div class="vizitka">
             <img class="foto" src="images/${vizitka.foto}"alt="${vizitka.name!x}!"/>
+            <div class="status-seznam">${vizitka.status}</div>
             <div class="jmeno">${vizitka.jmeno!x}</div>
             <div class="firma">${vizitka.firma!x}</div>
             <div class="udaje">
@@ -33,7 +33,6 @@
         </div>
     </a>
     [/#list]
-
     <a href="/nova">
         <div class="vizitka vizitka--nova">
             <svg width="100" height="100">
