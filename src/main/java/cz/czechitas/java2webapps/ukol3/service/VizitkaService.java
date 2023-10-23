@@ -10,10 +10,8 @@ import java.sql.Date;
 
 @Service
 public class VizitkaService {
-
   private final List<Omerta> omerta = new ArrayList<>();
   private final List<Vizitka> seznamVizitek = new ArrayList<>();
-
   public VizitkaService() {
 
     seznamVizitek.add(
@@ -111,8 +109,33 @@ public class VizitkaService {
   }
   public void append(Vizitka vizitka) {
     if (!vizitka.getName().isEmpty()) {
+      checkValues(vizitka);
       seznamVizitek.add(vizitka);
       vizitka.setFoto("unknown.jpg");
+    }
+  }
+  public void checkValues(Vizitka vizitka){
+    String unknown = "Unknown";
+    if (vizitka.getCompany().isEmpty()){
+      vizitka.setCompany(unknown);
+    }
+    if (vizitka.getStreet().isEmpty()){
+      vizitka.setStreet(unknown);
+    }
+    if (vizitka.getStreetPostCode().isEmpty()){
+      vizitka.setStreetPostCode(unknown);
+    }
+    if (vizitka.getEmail().isEmpty()){
+      vizitka.setEmail(unknown);
+    }
+    if (vizitka.getPhoneNumber().isEmpty()){
+      vizitka.setPhoneNumber(unknown);
+    }
+    if (vizitka.getWeb().isEmpty()){
+      vizitka.setWeb(unknown);
+    }
+    if (vizitka.getStatus().isEmpty()){
+      vizitka.setStatus(unknown);
     }
   }
 }
